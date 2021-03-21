@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { db } from "./firebase";
-import './ProblemForm.css'
-import test from './test.svg'
+import "./ProblemForm.css";
+import test from "./test.svg";
 const ProblemForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -39,12 +39,11 @@ const ProblemForm = () => {
     <div className="problemform">
       <div className="header__div">
         <img className="logo__svg" src={test} alt="logo" />
-        <h1 className="form__header">Problem</h1></div>
+        <h1 className="form__header">Problem & Ideas</h1>
+      </div>
       <form className="form" onSubmit={handleSubmit}>
-
-
         <div className="form__main">
-          <label className="label__name" >Name</label>
+          <label className="label__name">Name</label>
           <input
             required
             className="input__name"
@@ -74,10 +73,13 @@ const ProblemForm = () => {
             value={problem}
             onChange={(e) => setProblem(e.target.value)}></textarea>
           <div className="button__div">
-          <button className="form__button" type="submit" style={{ background: loader ? "" : "" }}>
-            Submit
-      </button>
-      </div>
+            <button
+              className="form__button"
+              type="submit"
+              style={{ background: loader ? "" : "" }}>
+              Submit
+            </button>
+          </div>
         </div>
       </form>
     </div>
