@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { db } from "./firebase";
+import './ProblemForm.css'
+import test from './test.svg'
 const ProblemForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -34,41 +36,51 @@ const ProblemForm = () => {
     setContact("");
   };
   return (
-    <form className="form" onSubmit={handleSubmit}>
-      <h1>Problem</h1>
+    <div className="problemform">
+      <div className="header__div">
+        <img className="logo__svg" src={test} alt="logo" />
+        <h1 className="form__header">Problem</h1></div>
+      <form className="form" onSubmit={handleSubmit}>
 
-      <label>Name</label>
-      <input
-        required
-        placeholder="Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
 
-      <label>Email</label>
-      <input
-        required
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <label>Contact Number</label>
-      <input
-        placeholder="Phone Number"
-        value={contact}
-        onChange={(e) => setContact(e.target.value)}
-      />
-      <label>Problem</label>
-      <textarea
-        required
-        placeholder="Message"
-        value={problem}
-        onChange={(e) => setProblem(e.target.value)}></textarea>
+        <div className="form__main">
+          <label className="label__name" >Name</label>
+          <input
+            required
+            className="input__name"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
 
-      <button type="submit" style={{ background: loader ? "" : "" }}>
-        Submit
+          <label className="label__email">Email</label>
+          <input
+            required
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <label className="lable__contact">Contact Number</label>
+          <input
+            placeholder="Phone Number"
+            value={contact}
+            onChange={(e) => setContact(e.target.value)}
+          />
+          <label className="label__problem">Problem</label>
+          <textarea
+            required
+            className="form__textarea"
+            placeholder="Message"
+            value={problem}
+            onChange={(e) => setProblem(e.target.value)}></textarea>
+          <div className="button__div">
+          <button className="form__button" type="submit" style={{ background: loader ? "" : "" }}>
+            Submit
       </button>
-    </form>
+      </div>
+        </div>
+      </form>
+    </div>
   );
 };
 
