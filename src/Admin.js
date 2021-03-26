@@ -24,6 +24,7 @@ const Admin = () => {
               <h4>{i.problem}</h4>
               <h4>{i.contact}</h4>
               <h4>{i.email}</h4>
+              <hr/>
             </div>
           );
         })}
