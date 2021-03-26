@@ -1,0 +1,52 @@
+.admin{
+    height: 100%;
+    background-image: linear-gradient(
+      180deg,
+      #2f6ed3cc 5%,
+      #5095e4e6 20%,
+      #5095e4e6 60%,
+      #2f6ed3eb 90%
+    );
+    
+    
+    padding-top: 10px;
+    width: 100%;
+}
+.logo{
+    width: 10rem;
+
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.admin__main{
+
+ width: 100vw;
+}
+.main{
+    padding-top: 10vh;
+}
+.admin__text{
+text-align: center;
+position: relative;
+top: 0;
+align-items: center;
+}
+.idea{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    
+}
+.idea__card{
+    flex-wrap: wrap;
+    min-width: 30vw;
+    height: 15vh;
+    border-radius: 10px;
+    background-color:#235fc1 ;
+    margin-bottom: 10px;
+    padding: 20px 10px 10px 10px;
+    color: white;
+    
+}
