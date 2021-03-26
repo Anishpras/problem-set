@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { db } from "./firebase";
 import "./ProblemForm.css";
 import test from "./test.svg";
+import Kalp_virksh from './Kalp_virksh.png'
+
 const ProblemForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -38,7 +40,7 @@ const ProblemForm = () => {
   return (
     <div className="problemform">
       <div className="header__div">
-        <img className="logo__svg" src={test} alt="logo" />
+        <img className="logo__svg" src={Kalp_virksh} alt="logo" />
         <h1 className="form__header">Problem & Ideas</h1>
       </div>
       <form className="form" onSubmit={handleSubmit}>
