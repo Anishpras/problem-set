@@ -89,12 +89,17 @@ input::placeholder {
   border: 1px solid rgba(255, 255, 255, 0.18);
   color: white;
   height: 15rem;
+
+  opacity: 1;
+  padding: 10px;
+  padding-left: 2rem;
+  font-size: 1rem;
+  font-family: Arial, sans-serif;
 }
 .form__textarea::placeholder {
   color: #ffffff;
   opacity: 1;
-  padding: 10px;
-  padding-left: 2rem;
+
   font-size: 0.9rem;
   font-family: Arial, sans-serif;
 }
