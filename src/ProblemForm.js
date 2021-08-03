@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { db } from "./firebase";
 import "./ProblemForm.css";
-import test from "./test.svg";
-import Kalp_virksh from './Kalp_virksh.png'
+
+import Kalp_virksh from "./Kalp_virksh.png";
 
 const ProblemForm = () => {
   const [name, setName] = useState("");
