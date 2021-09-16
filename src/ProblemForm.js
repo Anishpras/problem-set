@@ -47,6 +47,7 @@ const ProblemForm = () => {
         <img className="logo__svg" src={Kalp_virksh} alt="logo" />
         <h1 className="form__header">Kalp Vriksh</h1>
       </div>
+
       <form className="form" onSubmit={handleSubmit}>
         <div className="form__main">
           <label className="label__name">Name</label>
