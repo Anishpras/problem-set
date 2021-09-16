@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Admin.css";
 import { db } from "./firebase";
-import { Modal, Button } from "@mantine/core";
+import { Modal, Button, Input } from "@mantine/core";
 import Kalp_virksh from "./Kalp_virksh.png";
 const Admin = () => {
   const [idea, setIdea] = useState([]);
@@ -17,7 +17,7 @@ const Admin = () => {
   }, []);
 
   const checkAdminPrivilege = () => {
-    if (secretCode === "amitysecret") {
+    if (secretCode === process.env.REACT_APP_SECRET_KEY) {
       setIsAuthenticated(true);
       setOpened(false);
     }
@@ -29,8 +29,8 @@ const Admin = () => {
         <Modal
           opened={opened}
           onClose={() => setOpened(false)}
-          title="Introduce yourself!">
-          <input type="text" onChange={(e) => setSecretCode(e.target.value)} />
+          title="Please enter your secret code.">
+          <Input type="text" onChange={(e) => setSecretCode(e.target.value)} />
           <Button onClick={checkAdminPrivilege}>Submit</Button>
         </Modal>
       </div>
@@ -66,10 +66,4 @@ const Admin = () => {
 
 export default Admin;
 
-// const AdminCheck = () => {
-//   return (
-//     <>
-//       <input type="text" />
-//     </>
-//   );
-// };
+
