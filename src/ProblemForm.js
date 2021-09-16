@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { db } from "./firebase";
 import "./ProblemForm.css";
-
+import { useNotifications } from "@mantine/notifications";
 import Kalp_virksh from "./Kalp_virksh.png";
 
 const ProblemForm = () => {
@@ -11,7 +11,7 @@ const ProblemForm = () => {
   const [contact, setContact] = useState("");
 
   const [loader, setLoader] = useState(false);
-
+  const notifications = useNotifications();
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoader(true);
@@ -22,10 +22,14 @@ const ProblemForm = () => {
         email: email,
         contact: contact,
         problem: problem,
+        time: new Date(),
       })
       .then(() => {
         setLoader(false);
-        alert("Your message has been submitted👍");
+        notifications.showNotification({
+          title: "Awesome!",
+          message: `Hey ${name}, Your Idea is submitted for review`,
+        });
       })
       .catch((error) => {
         alert(error.message);
@@ -76,6 +80,7 @@ const ProblemForm = () => {
             onChange={(e) => setProblem(e.target.value)}></textarea>
           <div className="button__div">
             <button
+              disabled={loader}
               className="form__button"
               type="submit"
               style={{ background: loader ? "" : "" }}>
