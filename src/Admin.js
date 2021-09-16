@@ -30,7 +30,10 @@ const Admin = () => {
           opened={opened}
           onClose={() => setOpened(false)}
           title="Please enter your secret code.">
-          <Input type="text" onChange={(e) => setSecretCode(e.target.value)} />
+          <Input
+            type="password"
+            onChange={(e) => setSecretCode(e.target.value)}
+          />
           <Button onClick={checkAdminPrivilege}>Submit</Button>
         </Modal>
       </div>
@@ -65,5 +68,3 @@ const Admin = () => {
 };
 
 export default Admin;
-
-
